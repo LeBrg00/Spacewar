@@ -84,11 +84,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\leo.berg4\\Documents\\Programering_2\\Vinterprojekt\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectUniqueName": "C:\\Users\\leo.berg4\\Documents\\Programering_2\\Spacewar\\ConsoleApp1\\ConsoleApp1.csproj",
       "projectName": "ConsoleApp1",
-      "projectPath": "c:\\Users\\leo.berg4\\Documents\\Programering_2\\Vinterprojekt\\ConsoleApp1\\ConsoleApp1.csproj",
+      "projectPath": "C:\\Users\\leo.berg4\\Documents\\Programering_2\\Spacewar\\ConsoleApp1\\ConsoleApp1.csproj",
       "packagesPath": "C:\\Users\\leo.berg4\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\leo.berg4\\Documents\\Programering_2\\Vinterprojekt\\ConsoleApp1\\obj\\",
+      "outputPath": "C:\\Users\\leo.berg4\\Documents\\Programering_2\\Spacewar\\ConsoleApp1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

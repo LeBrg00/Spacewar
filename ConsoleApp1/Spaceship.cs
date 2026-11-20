@@ -1,4 +1,5 @@
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using Raylib_cs;
@@ -16,7 +17,7 @@ class Spaceship
     private KeyboardKey rotateright;
     public Spaceship(KeyboardKey fire, KeyboardKey go, KeyboardKey rotleft, KeyboardKey rotright, Vector2 start, Vector2 barpos)
     {
-        shoot =fire;
+        shoot=fire;
         thrust=go;
         rotateleft=rotleft;
         rotateright=rotright;
@@ -32,27 +33,52 @@ class Spaceship
         accelarate();
         fire();
         Show(barp);
+        rotate();
     }
     private void draw()
     {
         
+        //Raylib.DrawTexturePro();
     }
     private void Move()
     {
         position=position+velocity;
     }
-    private void accelarate()
+    private void accelarate()//Reminder använd sinus,cos,tangent för att konvertertera rotation till vector2
     {
         if (Raylib.IsKeyDown(thrust))
         {
             fuel--;
+            float sin=(float)Math.Sin(direction);
+            float cos=(float)Math.Cos(direction);
+            Vector2 velocityAdd = new (sin,cos);
+            velocity=velocity+velocityAdd;
         }
     }
     private void fire()
     {
-        if (Raylib.IsKeyDown(shoot))
+        if (Raylib.IsKeyPressed(shoot))
         {
             ammo--;
+        }
+    }
+    private void rotate()
+    {
+        if (Raylib.IsKeyDown(rotateleft))
+        {
+            direction--;
+        }
+        if (Raylib.IsKeyDown(rotateright))
+        {
+            direction++;
+        }
+        if (direction <= 0)
+        {
+            direction=360;
+        }
+        if (direction >= 360)
+        {
+            direction=0;
         }
     }
     private void Show(Vector2 barposition)

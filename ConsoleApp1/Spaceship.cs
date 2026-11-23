@@ -3,10 +3,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using Raylib_cs;
-class Spaceship
+class Spaceship:Object
 {
-    private new Vector2 position;
-    private new Vector2 velocity;
     private new Vector2 barp;
     private int ammo;
     private int fuel;
@@ -40,10 +38,10 @@ class Spaceship
         
         //Raylib.DrawTexturePro();
     }
-    private void Move()
-    {
-        position=position+velocity;
-    }
+    //private void Move()
+    //{
+    //    position=position+velocity;
+    //}
     private void accelarate()//Reminder använd sinus,cos,tangent för att konvertertera rotation till vector2
     {
         if (Raylib.IsKeyDown(thrust))
@@ -51,7 +49,7 @@ class Spaceship
             fuel--;
             float sin=(float)Math.Sin(direction);
             float cos=(float)Math.Cos(direction);
-            Vector2 velocityAdd = new (sin,cos);
+            Vector2 velocityAdd = new (cos,sin);
             velocity=velocity+velocityAdd;
         }
     }

@@ -1,11 +1,14 @@
 using System.Numerics;
+using System.Runtime.CompilerServices;
 
-class Projectile
+class Projectile:Object
 {
-    private int position;
-    private int velocity;
     public Projectile(Vector2 start)
     {
         
+    }
+    public void check()
+    {
+        Move();
     }
 }
